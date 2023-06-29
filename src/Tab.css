@@ -1,0 +1,29 @@
+.tab-container {
+  border: 1px solid black;
+  margin: 2rem;
+  display: flex;
+  flex-direction: column;
+}
+
+.tab-header-container {
+  display: flex;
+  justify-content: space-around;
+}
+
+.tab-item {
+  background: red;
+  color: white;
+  cursor: pointer;
+  width: 100%;
+  padding: 10px;
+}
+
+.active {
+  background-color: brown;
+}
+
+.tab-content-container {
+  background-color: grey;
+  margin: 0;
+  padding: 10px;
+}

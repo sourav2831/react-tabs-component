@@ -1,23 +1,33 @@
-import logo from './logo.svg';
-import './App.css';
+import { useState } from "react";
+import Tab from "./Tab";
+import "./App.css";
 
 function App() {
+  const [index, setIndex] = useState(0);
+
+  const onChange = (target) => {
+    setIndex(target);
+  };
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <Tab value={index} onChange={onChange}>
+        <Tab.HeaderContainer>
+          <Tab.Item index={0}>Tab1</Tab.Item>
+          <Tab.Item index={1}>Tab2</Tab.Item>
+          <Tab.Item index={2}>Tab3</Tab.Item>
+        </Tab.HeaderContainer>
+        <Tab.ContentContainer>
+          <Tab.Content index={0}>
+            <h1>Content 1</h1>
+          </Tab.Content>
+          <Tab.Content index={1}>
+            <h1>Content 2</h1>
+          </Tab.Content>
+          <Tab.Content index={2}>
+            <h1>Content 3</h1>
+          </Tab.Content>
+        </Tab.ContentContainer>
+      </Tab>
     </div>
   );
 }
